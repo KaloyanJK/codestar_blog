@@ -1,6 +1,6 @@
 {% load static %}
+
 {% url 'home' as home_url %}
-{% url 'about' as about_url %}
 {% url 'account_login' as login_url %}
 {% url 'account_signup' as signup_url %}
 {% url 'account_logout' as logout_url %}
@@ -73,17 +73,16 @@
             </div>
         </div>
     </nav>
-
+    
     <!-- displaying Django messages -->
     <div class="container">
         <div class="row">
             <div class="col-md-8 offset-md-2">
                 {% for message in messages %}
                 <div class="alert {{ message.tags }} alert-dismissible
-                    fade show" id="msg" role="alert">
+          fade show" id="msg" role="alert">
                     {{ message | safe }}
-                    <button type="button" class="btn-close"
-                    data-bs-dismiss="alert" aria-label="Close"></button>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
                 {% endfor %}
             </div>
@@ -107,7 +106,7 @@
     <footer class="footer mt-auto py-3 dark-bg">
         <p class="m-0 text-center text-white">
             {% block copyright %}
-            Copyright 2026 Kal El
+            Made by Code Instituters
             {% endblock copyright %}
         </p>
         <p class="m-0 text-center text-white">Follow us: <i class="fab fa-facebook-square ms-3"></i>
@@ -117,11 +116,16 @@
         </p>
     </footer>
 
+    <script>
+        console.log("BASE HTML JS WORKS");
+    </script>
+
+    {% block extras %}
+    {% endblock %}
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
         </script>
-
-    <script src="{% static 'js/script.js' %}"></script>
     
 </body>
 
